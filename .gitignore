@@ -1,0 +1,10 @@
+Library
+Logs
+Temp
+Build
+obj
+.vs
+.vsconfig
+*.csproj
+*.sln
+Assets/_Main/Fonts
