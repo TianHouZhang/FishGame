@@ -1,5 +1,8 @@
 using UnityEngine;
 using ZTH.Unity.Tool;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 public class GridMapper : MonoBehaviour
 {
@@ -32,7 +35,11 @@ public class GridMapper : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.green;
+        Gizmos.color = color;
+
+        var style = new GUIStyle();
+        style.normal.textColor = color;
+        style.alignment = TextAnchor.UpperLeft;
 
         for (var y = 0; y < gridSize.y; y++)
         {
@@ -41,6 +48,12 @@ public class GridMapper : MonoBehaviour
                 var index = new Vector2Int(x, y);
                 var position = Index2WorldPosition(index);
                 Gizmos.DrawWireCube(position, cellSize);
+#if UNITY_EDITOR
+                var labelOffset = cellSize / 2;
+                var labelPosition = position + new Vector3(-labelOffset.x, labelOffset.y);
+                var labelText = $" {index.x},{index.y}";
+                Handles.Label(labelPosition, labelText, style);
+#endif
             }
         }
     }
@@ -51,4 +64,5 @@ public class GridMapper : MonoBehaviour
     [SerializeField] private Vector2 cellSize = Vector2.one;
     [SerializeField] private Vector2Int gridSize = Vector2Int.one;
     [SerializeField] private Vector2 offset;
+    [SerializeField] private Color color;
 }

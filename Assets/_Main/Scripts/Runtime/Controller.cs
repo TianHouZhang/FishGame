@@ -1,10 +1,13 @@
 using Sirenix.OdinInspector;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using ZTH.Unity.Tool;
 
 public class Controller : MonoSingleton<Controller>
 {
-    [SerializeField] private string test; public string Test => test;
+    private void Start()
+    {
+        BattleField.I.Init();
+    }
+
+    [FoldoutGroup("Battle Piece")][SerializeField] private string battlePiecePrefabPath; public string BattlePiecePrefabPath => battlePiecePrefabPath;
 }
