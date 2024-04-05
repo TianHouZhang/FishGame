@@ -11,13 +11,13 @@ TagManager:
   - 
   - Water
   - UI
-  - FishTank
+  - FishTankWall
   - Fish
-  - 
-  - 
-  - 
-  - 
-  - 
+  - WaterLevel
+  - FishFood
+  - FishLine
+  - FishFOV
+  - FishMouse
   - 
   - 
   - 
@@ -38,6 +38,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 253453227
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
@@ -46,4 +49,10 @@ TagManager:
     locked: 0
   - name: Fish
     uniqueID: 3245369165
+    locked: 0
+  - name: FishLine
+    uniqueID: 233542753
+    locked: 0
+  - name: FishFood
+    uniqueID: 3700254067
     locked: 0
