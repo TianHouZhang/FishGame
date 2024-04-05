@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using ZTH.Unity.Tool;
 
-public interface IBattlePiece
+public class FishTank : MonoSingleton<FishTank>
 {
-    void OnContact(IBattlePiece other);
 }

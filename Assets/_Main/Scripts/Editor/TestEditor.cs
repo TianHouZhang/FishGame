@@ -9,12 +9,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using ZTH.Unity.Tool;
 
-public class ControllerEditor : OdinEditorWindow
+public class TestEditor : OdinEditorWindow
 {
     [MenuItem("Tools/Main/Controller Editor")]
     private static void OpenWindow()
     {
-        GetWindow<ControllerEditor>().position = GUIHelper.GetEditorWindowRect().AlignCenter(600, 600);
+        GetWindow<TestEditor>().position = GUIHelper.GetEditorWindowRect().AlignCenter(600, 600);
     }
 
     protected override IEnumerable<object> GetTargets()
